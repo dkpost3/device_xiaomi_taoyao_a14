@@ -722,4 +722,16 @@
     
     <!-- If this is true, device supports Sustained Performance Mode. -->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
+
+    <!-- The properties of a UDFPS sensor in pixels, in the order listed below: -->
+    <integer-array name="config_udfps_sensor_props" translatable="false" >
+      <!--
+        <item>sensorLocationX</item>
+        <item>sensorLocationY</item>
+        <item>sensorRadius</item>
+      -->
+      <item>437</item>
+      <item>2046</item>
+      <item>95</item>
+    </integer-array>
 </resources>

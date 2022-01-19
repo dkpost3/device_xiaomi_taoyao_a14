@@ -201,7 +201,6 @@ persist.vendor.dpmhalservice.enable=1
 # Fingerprint ( FOD )
 persist.vendor.fod.modified.dc_status=false
 persist.vendor.power.dfps.level=0
-persist.vendor.sys.fp.fod.location.X_Y=437,2046 persist.vendor.sys.fp.fod.size.width_height=206,206
 ro.hardware.fp.fod=true
 ro.hardware.fp.fod.location=low
 

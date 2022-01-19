@@ -46,5 +46,5 @@
     <bool name="config_vibrateOnIconAnimation">true</bool>
 
     <!-- The radius of the enrollment progress bar, in dp -->
-    <integer name="config_udfpsEnrollProgressBar" translatable="false">280</integer>
+    <integer name="config_udfpsEnrollProgressBar" translatable="false">101</integer>
 </resources>
