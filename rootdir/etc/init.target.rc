@@ -332,6 +332,9 @@ on boot
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/trigger_interval
     chmod 664 /sys/devices/platform/soc/1d84000.ufshc/ufscld/trigger
 
+    # Touch
+    chown system system /sys/devices/virtual/touch/touch_dev/bump_sample_rate
+
 on property:sys.boot_completed=1
     # Runtime fs tuning
     write /dev/sys/fs/by-name/userdata/data_io_flag 8
