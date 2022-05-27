@@ -70,6 +70,9 @@ SOONG_CONFIG_dolby_vision_enabled := true
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
+# Fingerprint
+TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.xiaomi_sm8350
+
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 LOC_HIDL_VERSION := 4.0
@@ -207,9 +210,7 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 # Soong
 SOONG_CONFIG_NAMESPACES += xiaomiSm8350Vars
 SOONG_CONFIG_xiaomiSm8350Vars += \
-    fingerprint_use_extension \
     vibrator_use_effect_stream
-SOONG_CONFIG_xiaomiSm8350Vars_fingerprint_use_extension ?= false
 SOONG_CONFIG_xiaomiSm8350Vars_vibrator_use_effect_stream ?= false
 
 # Verified Boot
