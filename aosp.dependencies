@@ -1,0 +1,32 @@
+[
+    {
+        "repository": "hardware_xiaomi",
+        "target_path": "hardware/xiaomi",
+        "branch": "thirteen",
+        "remote": "pixel"
+    },
+    {
+        "repository": "kernel_xiaomi_lisa",
+        "target_path": "kernel/xiaomi/lisa",
+        "branch": "thirteen",
+        "remote": "pixel-devices"
+    },
+    {
+        "repository": "vendor_xiaomi_lisa",
+        "target_path": "vendor/xiaomi/lisa",
+        "branch": "thirteen",
+        "remote": "pixel-devices-blobs"
+    },
+    {
+        "repository": "vendor_xiaomi_lisa-firmware",
+        "target_path": "vendor/xiaomi/lisa-firmware",
+        "branch": "thirteen",
+        "remote": "pixel-devices-blobs"
+    },
+    {
+        "repository": "vendor_xiaomi_lisa-miuicamera",
+        "target_path": "vendor/xiaomi/camera",
+        "branch": "thirteen",
+        "remote": "pixel-devices-blobs"
+    }
+]
