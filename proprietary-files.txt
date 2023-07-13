@@ -1418,7 +1418,6 @@ vendor/etc/init/init.vendor.sensors.rc
 vendor/etc/init/vendor.sensors.qti.rc
 vendor/etc/init/vendor.sensors.sscrpcd.rc
 vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc
-vendor/etc/sensors/hals.conf
 -vendor/etc/vintf/manifest/vendor.xiaomi.hardware.citsensorservice@1.1-service.xml
 vendor/lib64/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
 vendor/lib64/libnanopb.so
