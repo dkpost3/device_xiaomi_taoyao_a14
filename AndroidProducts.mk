@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_lisa.mk
+    $(LOCAL_DIR)/aosp_taoyao.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_lisa-user \
-    aosp_lisa-userdebug \
-    aosp_lisa-eng
+    aosp_taoyao-user \
+    aosp_taoyao-userdebug \
+    aosp_taoyao-eng
