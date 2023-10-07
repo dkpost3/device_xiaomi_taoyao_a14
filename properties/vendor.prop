@@ -128,8 +128,12 @@ persist.vendor.dpm.idletimer.mode=default
 persist.vendor.dpm.nsrm.bkg.evt=3955
 persist.vendor.dpmhalservice.enable=1
 
-# Fingerprint
-ro.hardware.fingerprint=fpc
+# Fingerprint ( FOD )
+persist.vendor.fod.modified.dc_status=false
+persist.vendor.power.dfps.level=0
+persist.vendor.sys.fp.fod.location.X_Y=437,2046 persist.vendor.sys.fp.fod.size.width_height=206,206
+ro.hardware.fp.fod=true
+ro.hardware.fp.fod.location=low
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
@@ -192,11 +196,14 @@ debug.stagefright.ccodec=4
 debug.stagefright.omx_default_rank=0
 media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.config.vc_call_vol_steps=11
-ro.config.media_vol_steps=25
+ro.config.media_vol_steps=100
 
 # NFC
+ro.vendor.nfc.disable.i2c=true
+ro.vendor.nfc.dispatch_optim=1
 ro.vendor.nfc.repair=1
-ro.vendor.se.type=eSE,HCE,UICC
+ro.vendor.se.chip.model=SN110T
+ro.vendor.se.type=HCE,UICC
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
@@ -255,3 +262,9 @@ persist.vendor.usb.config=mtp,adb
 
 # Wifi
 wifi.aware.interface=wifi-aware0
+
+# WLAN
+ro.hardware.wlan.chip=6750
+ro.hardware.wlan.dbs=0
+ro.hardware.wlan.mimo=1
+ro.hardware.wlan.vendor=qcom

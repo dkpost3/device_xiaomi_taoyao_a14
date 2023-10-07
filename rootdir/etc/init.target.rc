@@ -8,6 +8,7 @@
 import /vendor/etc/init/hw/init.qti.kernel.rc
 import /vendor/etc/init/hw/init.mi_thermald.rc
 import /vendor/etc/init/hw/init.batterysecret.rc
+import /vendor/etc/init/hw/init.xiaomi.camera.rc
 
 on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/vendor_modprobe.sh
@@ -131,9 +132,43 @@ on post-fs-data
     mkdir /data/vendor/qxwz 0770 gps system
     chmod 0660 /dev/al6021
     chown system camera /dev/al6021
-    
-    # Create data folder for FPC fingerprint
-    mkdir /data/vendor/fpc 0770 system system
+
+    # Torch mode cit sensors
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chown system system /sys/class/leds/led:torch_2/brightness
+    chown system system /sys/class/leds/led:torch_3/brightness
+    chown system system /sys/class/leds/led:flash_0/brightness
+    chown system system /sys/class/leds/led:flash_1/brightness
+    chown system system /sys/class/leds/led:flash_2/brightness
+    chown system system /sys/class/leds/led:flash_3/brightness
+    chown system system /sys/class/leds/led:switch_0/brightness
+    chown system system /sys/class/leds/led:switch_1/brightness
+    chown system system /sys/class/leds/led:switch_2/brightness
+    chown system system /sys/class/leds/led:switch_3/brightness
+    chown system system /sys/class/leds/led:switch_0/trigger
+    chown system system /sys/class/leds/led:switch_1/trigger
+    chown system system /sys/class/leds/led:switch_2/trigger
+    chown system system /sys/class/leds/led:switch_3/trigger
+    chown system system /sys/class/leds/flashlight/brightness
+
+    chmod 0664 /sys/class/leds/led:torch_0/brightness
+    chmod 0664 /sys/class/leds/led:torch_1/brightness
+    chmod 0664 /sys/class/leds/led:torch_2/brightness
+    chmod 0664 /sys/class/leds/led:torch_3/brightness
+    chmod 0664 /sys/class/leds/led:flash_0/brightness
+    chmod 0664 /sys/class/leds/led:flash_1/brightness
+    chmod 0664 /sys/class/leds/led:flash_2/brightness
+    chmod 0664 /sys/class/leds/led:flash_3/brightnesssss
+    chmod 0664 /sys/class/leds/led:switch_0/brightness
+    chmod 0664 /sys/class/leds/led:switch_1/brightness
+    chmod 0664 /sys/class/leds/led:switch_2/brightness
+    chmod 0664 /sys/class/leds/led:switch_3/brightness
+    chmod 0664 /sys/class/leds/led:switch_0/trigger
+    chmod 0664 /sys/class/leds/led:switch_1/trigger
+    chmod 0664 /sys/class/leds/led:switch_2/trigger
+    chmod 0664 /sys/class/leds/led:switch_3/trigger
+    chmod 0664 /sys/class/leds/flashlight/brightness
     
     mkdir /mnt/vendor/dsp 0770 root root
     copy /vendor/dsp/cdsp/fastrpc_shell_3 /mnt/vendor/dsp/fastrpc_shell_3

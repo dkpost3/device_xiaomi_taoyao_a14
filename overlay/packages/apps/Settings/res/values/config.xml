@@ -24,10 +24,6 @@
     <!-- Whether to show Smooth Display feature in Settings Options -->
     <bool name="config_show_smooth_display">true</bool>
 
-    <!-- Fingerprint sensor -->
-    <dimen name="fingerprint_dot_radius">0dp</dimen>
-    <dimen name="fingerprint_pulse_radius">0dp</dimen>
-
     <!-- Whether to show a preference item for mobile plan -->
     <bool name="config_show_mobile_plan">false</bool>
 
