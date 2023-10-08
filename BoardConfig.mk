@@ -90,27 +90,19 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_taoyao
 TARGET_RECOVERY_DEVICE_MODULES := libinit_taoyao
 
 # Kernel
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_RAMDISK_OFFSET := 0x01000000
-BOARD_KERNEL_OFFSET := 0x00008000
-BOARD_DTB_OFFSET := 0x01f00000
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_RAMDISK_USE_LZ4 := true
 
 BOARD_BOOT_HEADER_VERSION := 3
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) \
-			--base $(BOARD_KERNEL_BASE) \
-			--pagesize $(BOARD_KERNEL_PAGESIZE) \
-			--ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-			--tags_offset $(BOARD_KERNEL_TAGS_OFFSET) \
-			--kernel_offset $(BOARD_KERNEL_OFFSET) \
-			--dtb_offset $(BOARD_DTB_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS +=  --base $(BOARD_KERNEL_BASE)
 
-TARGET_KERNEL_SOURCE := kernel/xiaomi/taoyao
-TARGET_KERNEL_CONFIG := taoyao_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8350
+TARGET_KERNEL_CONFIG := lahaina-qgki_defconfig
 
 BOARD_KERNEL_CMDLINE += androidboot.console=ttyMSM0 \
 			androidboot.hardware=qcom \
@@ -125,13 +117,19 @@ BOARD_KERNEL_CMDLINE += androidboot.console=ttyMSM0 \
 			iptable_raw.raw_before_defrag=1 \
 			ip6table_raw.raw_before_defrag=1
 
-# Kernel modules
-BOOT_KERNEL_MODULES := \
-    hwid.ko \
-    goodix_core.ko \
-    xiaomi_touch.ko
+# Kernel prebuilt
+BOARD_KERNEL_BINARIES := kernel
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img
 
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(BOOT_KERNEL_MODULES)
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)-kernel/dtb.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)-kernel/kernel
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)-kernel/dtb.img:$(TARGET_COPY_OUT)/dtb.img \
+    $(DEVICE_PATH)-kernel/kernel:kernel \
+    $(call find-copy-subdir-files,*,$(DEVICE_PATH)-kernel/ramdisk/,$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/modules) \
+    $(call find-copy-subdir-files,*,$(DEVICE_PATH)-kernel/vendor/,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
 
 # NFC
 TARGET_USES_NQ_NFC := true
