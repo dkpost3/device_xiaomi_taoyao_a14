@@ -1125,7 +1125,7 @@ vendor/lib/libqcodec2_utils.so
 vendor/lib/libqcodec2_v4l2codec.so
 vendor/lib64/libmmosal.so
 
-# Media (Dolby Vision) - from MIUI V13.0.8.0.SKOMIXM
+# Media (Dolby Vision) - from lisa MIUI V13.0.8.0.SKOMIXM
 vendor/bin/hw/dolbycodec2|cfef1c14f3cb696580229240590164c846bf14aa
 vendor/etc/init/dolbycodec2.rc|1ea8b363e94fd4f5410cadceb30de8229fb38045
 vendor/etc/dolby_vision.cfg|16447ca0a10b37869737cc15b495e8a3f6763bfa
@@ -1280,7 +1280,7 @@ vendor/lib64/libqmiservices.so
 vendor/lib64/libqrtr.so
 vendor/lib64/libqrtrclient.so
 
-# Radio (Data) - from MIUI V13.0.8.0.SKOMIXM
+# Radio (Data) - from lisa MIUI V13.0.8.0.SKOMIXM
 vendor/bin/netmgrd|d9129f0d7efe995b627a6ffa60d6823d5dea25e5
 
 # RIL
