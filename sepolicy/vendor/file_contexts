@@ -42,7 +42,7 @@
 /vendor/bin/hw/android\.hardware\.nfc_snxxx@1\.2-service                u:object_r:hal_nfc_default_exec:s0
 
 # Power
-/sys/devices/virtual/touch/tp_dev/double_tap                       u:object_r:vendor_sysfs_double_tap:s0
+/sys/devices/virtual/touch/tp_dev/fod_status                       u:object_r:vendor_sysfs_tp_fodstatus:s0
 /dev/xiaomi-touch                                                  u:object_r:vendor_touchfeature_device:s0
 # Power
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.xiaomi-libperfmgr  u:object_r:hal_power_default_exec:s0
@@ -59,6 +59,8 @@
 /data/vendor/fpc(/.*)?                                              u:object_r:vendor_fingerprint_data_file:s0
 /data/vendor/fpdump(/.*)?                                           u:object_r:vendor_fingerprint_data_file:s0
 /data/vendor/goodix(/.*)?                                           u:object_r:vendor_fingerprint_data_file:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi      u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.dtool@1\.0-service                         u:object_r:vendor_dtool_exec:s0
 
 # Sensors Fix script
 /vendor/bin/init\.sensors_fix\.sh	      u:object_r:vendor_init-qcom-sensors-sh_exec:s0

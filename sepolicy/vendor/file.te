@@ -1,2 +1,3 @@
 type public_adsprpcd_file, file_type;
 type vendor_sysfs_msm_subsys, fs_type, sysfs_type;
+type vendor_sysfs_tp_fodstatus, fs_type, sysfs_type;

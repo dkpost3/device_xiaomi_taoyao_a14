@@ -1,1 +1,2 @@
 r_dir_file(vendor_sensors, vendor_sysfs_graphics)
+allow hal_sensors_default vendor_sysfs_tp_fodstatus:file r_file_perms;
