@@ -287,6 +287,8 @@ vendor/lib64/libmmcamera_mfnr.so
 vendor/lib64/libmmcamera_mfnr_t4.so
 vendor/lib64/libmmcamera_pdpc.so
 vendor/lib64/libmpbase.so
+vendor/lib64/libofflinedump.so
+vendor/lib64/libofflinelog.so
 vendor/lib64/libomp.so
 vendor/lib64/libopencv.so
 vendor/lib64/libopenvx.so
