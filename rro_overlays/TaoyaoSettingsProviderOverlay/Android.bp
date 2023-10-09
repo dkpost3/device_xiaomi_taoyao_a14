@@ -1,4 +1,4 @@
 runtime_resource_overlay {
-    name: "LisaGLSettingsProviderOverlay",
+    name: "TaoyaoSettingsProviderOverlay",
     vendor: true
 }

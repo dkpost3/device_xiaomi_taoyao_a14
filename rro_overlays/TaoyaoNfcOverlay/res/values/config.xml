@@ -18,7 +18,7 @@
 
     <!-- List of SKUs where Secure NFC functionality is supported -->
     <string-array name="config_skuSupportsSecureNfc">
-        <item>lisa</item>
+        <item>taoyao</item>
     </string-array>
 
 </resources>
