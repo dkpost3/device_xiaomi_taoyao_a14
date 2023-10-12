@@ -101,6 +101,8 @@ on fs
     chmod 0660 /dev/tfa_rpc
     chmod 0660 /dev/tfa_control
     chmod 0666 /dev/xlog
+    chmod 644 /mnt/vendor/persist/audio/us_manual_cal
+    chmod 644 /persist/audio/us_manual_cal
 
 on fs && property:ro.boot.product.vendor.sku=lahaina
     mkdir /mnt/vendor/spunvm 0660 system system
