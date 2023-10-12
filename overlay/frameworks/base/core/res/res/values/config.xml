@@ -658,7 +658,7 @@
     <integer name="config_defaultRefreshRate">0</integer>
 
     <!-- The default peak refresh rate. -->
-    <integer name="config_defaultPeakRefreshRate">90</integer>
+    <integer name="config_defaultPeakRefreshRate">120</integer>
 
     <!-- Pocket Lock -->
     <bool name="config_pocketModeSupported">false</bool>
