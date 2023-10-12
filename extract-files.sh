@@ -95,9 +95,6 @@ function blob_fixup() {
         vendor/lib64/hw/com.qti.chi.override.so)
             sed -i 's/\/system\/lib64\([^\/]\)/\/vendor\/lib64\1/g' "${2}"
             ;;
-        vendor/lib64/libwa_sat.so)
-            sed -i 's/\/system\/lib64\([^\/]\)/\/vendor\/lib64\1/g' "${2}"
-            ;;
         vendor/etc/camera/taoyao_motiontuning.xml)
             sed -i 's/xml=version/xml\ version/g' "${2}"
 	    ;;
