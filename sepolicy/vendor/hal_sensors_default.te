@@ -1,5 +1,10 @@
 type vendor_sysfs_iio, fs_type, sysfs_type;
 
+binder_call(hal_sensors_default, hal_audio_default)
+hal_client_domain(hal_sensors_default, hal_audio)
+
+allow hal_sensors_default hal_audio_hwservice:hwservice_manager find;
+
 allow hal_sensors_default audio_socket:sock_file rw_file_perms;
 allow hal_sensors_default sensors_device:chr_file rw_file_perms;
 allow hal_sensors_default hal_audio_default:unix_stream_socket connectto;
