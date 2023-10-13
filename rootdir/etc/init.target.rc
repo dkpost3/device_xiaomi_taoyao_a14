@@ -8,7 +8,7 @@
 import /vendor/etc/init/hw/init.qti.kernel.rc
 import /vendor/etc/init/hw/init.mi_thermald.rc
 import /vendor/etc/init/hw/init.batterysecret.rc
-import /vendor/etc/init/hw/init.xiaomi.camera.rc
+import /vendor/etc/init/hw/init.xiaomi.rc
 
 on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/vendor_modprobe.sh
