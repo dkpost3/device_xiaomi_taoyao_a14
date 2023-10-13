@@ -59,3 +59,7 @@ on early-init
     write /dev/memcg/camera/media/codec/hw/memory.cache 5
     mkdir /dev/memcg/camera/media/codec/sw 0755 system system
     write /dev/memcg/camera/media/codec/sw/memory.cache 6
+
+# Touch
+on boot
+    chown system system /sys/devices/virtual/touch/touch_dev/bump_sample_rate
