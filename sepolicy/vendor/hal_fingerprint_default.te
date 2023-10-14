@@ -25,7 +25,7 @@ allow hal_fingerprint_default vendor_sysfs_spss:file rw_file_perms;
 allow hal_fingerprint_default vendor_sysfs_fingerprint:dir r_dir_perms;
 allow hal_fingerprint_default vendor_sysfs_fingerprint:file rw_file_perms;
 allow hal_fingerprint_default vendor_sysfs_graphics:dir r_dir_perms;
-allow hal_fingerprint_default vendor_sysfs_graphics:file r_file_perms;
+allow hal_fingerprint_default vendor_sysfs_graphics:file rw_file_perms;
 
 # Dev nodes
 allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
@@ -39,4 +39,4 @@ allow hal_fingerprint_default vendor_touchfeature_device:chr_file rw_file_perms;
 allow hal_fingerprint_default vendor_fingerprint_data_file:dir rw_dir_perms;
 allow hal_fingerprint_default vendor_fingerprint_data_file:file create_file_perms;
 allow hal_fingerprint_default vendor_sysfs_tp_fodstatus:chr_file r_file_perms;
-allow hal_fingerprint_default vendor_sysfs_tp_fodstatus:file r_file_perms;
+allow hal_fingerprint_default vendor_sysfs_tp_fodstatus:file rw_file_perms;
