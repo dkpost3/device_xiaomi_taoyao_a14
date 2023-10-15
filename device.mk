@@ -48,6 +48,9 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
+
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_yupik/audio_effects.conf \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_yupik/audio_effects.xml \
     $(LOCAL_PATH)/configs/audio/audio_platform_info_yupikidp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_yupik/audio_platform_info_yupikidp.xml \
