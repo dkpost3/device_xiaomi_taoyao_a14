@@ -215,8 +215,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libbatching \
     libgeofencing \
-    libgnss \
-    libsensorndkbridge
+    libgnss
 
 PRODUCT_PACKAGES += \
     apdr.conf \
@@ -363,8 +362,7 @@ PRODUCT_PACKAGES += \
     libchrome.vendor \
     NfcNci \
     SecureElement \
-    Tag \
-    android.hardware.secure_element@1.2.vendor
+    Tag
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
