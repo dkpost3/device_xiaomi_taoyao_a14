@@ -265,7 +265,7 @@ debug.stagefright.ccodec=4
 debug.stagefright.omx_default_rank=0
 media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.config.vc_call_vol_steps=11
-ro.config.media_vol_steps=100
+ro.config.media_vol_steps=30
 
 # NFC
 ro.vendor.nfc.disable.i2c=true
