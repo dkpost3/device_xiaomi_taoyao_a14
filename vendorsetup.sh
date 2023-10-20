@@ -3,16 +3,16 @@ echo 'Starting to clone stuffs needed to build for taoyao'
 
 # Vendor
 echo 'Cloning vendor tree'
-rm -rf vendor/xiaomi/taoyao && git clone git@github.com:xiaomi-taoyao/vendor_xiaomi_taoyao.git vendor/xiaomi/taoyao
+rm -rf vendor/xiaomi/taoyao && git clone git@github.com:Agatha-Prjkt/vendor_xiaomi_taoyao.git vendor/xiaomi/taoyao
 
 
 # Kernel
 echo 'Cloning kernel tree'
-rm -rf device/xiaomi/taoyao-kernel && git clone git@github.com:xiaomi-taoyao/device_xiaomi_taoyao-kernel.git device/xiaomi/taoyao-kernel
+rm -rf device/xiaomi/taoyao-kernel && git clone git@github.com:Agatha-Prjkt/device_xiaomi_taoyao-kernel.git device/xiaomi/taoyao-kernel
 
 # Kernel
 echo 'Cloning kernel header'
-rm -rf kernel/xiaomi/sm8350 && git clone git@github.com:xiaomi-taoyao/kernel_xiaomi_sm8350.git kernel/xiaomi/sm8350
+rm -rf kernel/xiaomi/sm8350 && git clone git@github.com:Agatha-Prjkt/kernel_xiaomi_sm8350.git kernel/xiaomi/sm8350
 
 
 # Gapps
