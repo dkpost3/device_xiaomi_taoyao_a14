@@ -22,31 +22,35 @@ import android.os.Handler;
 import android.os.UserHandle;
 import android.os.SystemClock;
 import android.view.KeyEvent;
+import android.media.AudioManager;
 import android.media.session.MediaController;
 import android.media.session.MediaSessionManager;
 import android.media.session.PlaybackState;
 import java.util.List;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
-public final class DiracUtils {
+public class DiracUtils {
 
-    protected static DiracSound mDiracSound;
-    private static boolean mInitialized;
-    private static MediaSessionManager mMediaSessionManager;
-    private static Handler mHandler = new Handler();
-    private static Context mContext;
+    private static DiracUtils mInstance;
+    private DiracSound mDiracSound;
+    private MediaSessionManager mMediaSessionManager;
+    private Handler mHandler = new Handler();
+    private Context mContext;
 
-    public static void initialize(Context context) {
-        if (!mInitialized) {
-            mContext = context;
-            mMediaSessionManager = (MediaSessionManager) context.getSystemService(Context.MEDIA_SESSION_SERVICE);
-            mDiracSound = new DiracSound(0, 0);
-            mInitialized = true;
-        }
+    public DiracUtils(Context context) {
+        mContext = context;
+        mMediaSessionManager = (MediaSessionManager) context.getSystemService(Context.MEDIA_SESSION_SERVICE);
+        mDiracSound = new DiracSound(0, 0);
     }
 
-    private static void triggerPlayPause(MediaController controller) {
+    public static synchronized DiracUtils getInstance(Context context) {
+        if (mInstance == null) {
+            mInstance = new DiracUtils(context);
+        }
+
+        return mInstance;
+    }
+
+    private void triggerPlayPause(MediaController controller) {
         long when = SystemClock.uptimeMillis();
         final KeyEvent evDownPause = new KeyEvent(when, when, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MEDIA_PAUSE, 0);
         final KeyEvent evUpPause = KeyEvent.changeAction(evDownPause, KeyEvent.ACTION_UP);
@@ -78,7 +82,7 @@ public final class DiracUtils {
         }, 1020);
     }
 
-    private static int getMediaControllerPlaybackState(MediaController controller) {
+    private int getMediaControllerPlaybackState(MediaController controller) {
         if (controller != null) {
             final PlaybackState playbackState = controller.getPlaybackState();
             if (playbackState != null) {
@@ -87,25 +91,35 @@ public final class DiracUtils {
         }
         return PlaybackState.STATE_NONE;
     }
-    protected static void setEnabled(boolean enable) {
+
+    private void refreshPlaybackIfNecessary() {
+        if (mMediaSessionManager == null) return;
+
+        final List<MediaController> sessions
+                = mMediaSessionManager.getActiveSessionsForUser(
+                null, UserHandle.ALL);
+        for (MediaController aController : sessions) {
+            if (PlaybackState.STATE_PLAYING ==
+                    getMediaControllerPlaybackState(aController)) {
+                triggerPlayPause(aController);
+                break;
+            }
+        }
+    }
+
+    public void setEnabled(boolean enable) {
         mDiracSound.setEnabled(enable);
         mDiracSound.setMusic(enable ? 1 : 0);
+        if (enable) {
+            refreshPlaybackIfNecessary();
+        }
     }
 
-    public static void onBootCompleted(Context context) {
-         DiracUtils.initialize(context);
-
-         // Restore selected scene
-         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-         String scene = sharedPrefs.getString(DiracSettingsFragment.PREF_SCENE, "4" /* smart */);
-         setScenario(Integer.parseInt(scene));
-    }
-
-    protected static boolean isDiracEnabled() {
+    public boolean isDiracEnabled() {
         return mDiracSound != null && mDiracSound.getMusic() == 1;
     }
 
-    protected static void setLevel(String preset) {
+    public void setLevel(String preset) {
         String[] level = preset.split("\\s*,\\s*");
 
         for (int band = 0; band <= level.length - 1; band++) {
@@ -113,11 +127,22 @@ public final class DiracUtils {
         }
     }
 
-    protected static void setHeadsetType(int paramInt) {
-         mDiracSound.setHeadsetType(paramInt);
+    public void setHeadsetType(int paramInt) {
+        mDiracSound.setHeadsetType(paramInt);
     }
 
-    protected static void setScenario(int sceneInt) {
+    public boolean getHifiMode() {
+        AudioManager audioManager = mContext.getSystemService(AudioManager.class);
+        return audioManager.getParameters("hifi_mode").contains("true");
+    }
+
+    public void setHifiMode(int paramInt) {
+        AudioManager audioManager = mContext.getSystemService(AudioManager.class);
+        audioManager.setParameters("hifi_mode=" + (paramInt == 1 ? true : false));
+        mDiracSound.setHifiMode(paramInt);
+    }
+
+    public void setScenario(int sceneInt) {
         mDiracSound.setScenario(sceneInt);
     }
 }
