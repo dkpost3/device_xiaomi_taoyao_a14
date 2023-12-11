@@ -1,4 +1,4 @@
-# Unpinned blobs from taoyao-user 13 RKQ1.211001.001 V14.0.6.0.TLIMIXM release-keys
+# Unpinned blobs from taoyao-user 13 RKQ1.211001.001 V14.0.7.0.TLIMIXM release-keys
 
 # ACDB
 vendor/etc/acdbdata/Forte/Forte_Bluetooth_cal.acdb
@@ -136,7 +136,6 @@ vendor/lib/soundfx/libshoebox.so
 
 # Audio Hardware
 vendor/lib/hw/audio.primary.lahaina.so
-vendor/lib/liba2dpoffload.so
 vendor/lib/libadm.so
 vendor/lib/libaudio_log_utils.so
 lib/libaudiocloudctrl.so:vendor/lib/libaudiocloudctrl.so
@@ -169,9 +168,7 @@ vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib/btaudio_offload_if.so
 vendor/lib/libbluetooth_audio_session_qti.so
 vendor/lib/libbluetooth_audio_session_qti_2_1.so
-vendor/lib/vendor.qti.hardware.bluetooth_audio@2.1.so
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.1.so
 
 # CAcert
 -vendor/app/CACertService/CACertService.apk
@@ -196,7 +193,6 @@ vendor/lib64/libAF.so
 vendor/lib64/libFace3DTA.so
 vendor/lib64/libFace3D_hlos.so
 vendor/lib64/libFlickerDet.so
-vendor/lib64/libMegviiFacepp-0.5.2.so
 vendor/lib64/libQnnHtpAltPrepStub.so
 vendor/lib64/libQnnHtpStub.so
 vendor/lib64/libSNPE.so
@@ -242,7 +238,6 @@ vendor/lib64/libcom.xiaomi.debug.so
 vendor/lib64/libcom.xiaomi.grallocutils.so
 vendor/lib64/libcom.xiaomi.metadatautils.so
 vendor/lib64/libcom.xiaomi.pluginutils.so
-vendor/lib64/libcomprcapture.so
 vendor/lib64/libcpion.so
 vendor/lib64/libcvface_api.so
 vendor/lib64/libdeccfg.so
@@ -320,7 +315,6 @@ vendor/lib64/libtriplecam_video_optical_zoom.so
 vendor/lib64/libvideoBokeh.so
 vendor/lib64/libvideofilter_only.so
 vendor/lib64/libvideooptfeature.so
-vendor/lib64/libvidhance.so
 vendor/lib64/libvidhance_active_ois.so
 vendor/lib64/libvidhance_dmbr.so
 vendor/lib64/libvidhance_face_stabilizer.so
@@ -587,7 +581,7 @@ vendor/firmware/CAMERA_ICP.elf
 vendor/firmware/CAMERA_ICP_170.elf
 
 # Camera Optical - from lisa MIUI V14.0.6.0.TKOMIXM
-vendor/lib64/libwa_opticalzoomfactor.so|81bbe8c568871d097e85a6d4a591e69f9d24731b
+vendor/lib64/libvidhance.so|39bfc8bf822a887aeb2ea7aa61790a00489a10d7
 
 # Camera plugins
 vendor/lib64/camera/plugins/com.qcom.plugin.gpu.so
@@ -747,6 +741,7 @@ vendor/lib64/vendor.qti.hardware.cvp@1.0.so
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.capabilityconfigstore@1.0.so
 
 # Consumer IR
 vendor/lib64/hw/consumerir.lahaina.so
@@ -762,27 +757,18 @@ vendor/bin/hw/vendor.qti.hardware.display.composer-service
 vendor/bin/init.qti.display_boot.sh
 vendor/lib64/libclient2slpi.notifier.so
 vendor/lib64/libdisp-aba.so
-vendor/lib64/libdisplaydebug.so
 vendor/lib64/libdisplayqos.so
 vendor/lib64/libdisplayskuutils.so
 vendor/lib64/libdpps.so
-vendor/lib64/libdrmutils.so
-vendor/lib64/libgpu_tonemapper.so
 vendor/lib64/libhdr_tm.so
-vendor/lib64/libhistogram.so
 vendor/lib64/libqdcm-mode-parser.so
-vendor/lib64/libqdutils.so
 vendor/lib64/libqseed3.so
-vendor/lib64/libqservice.so
 vendor/lib64/librcmask.so
-vendor/lib64/libsdedrm.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-colormgr-algo.so
 vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdm-disp-vndapis.so
-vendor/lib64/libsdmcore.so
 vendor/lib64/libsdmextension.so
-vendor/lib64/libsdmutils.so
 vendor/lib64/libsnapdragoncolor-manager.so
 vendor/lib64/libsnapdragoncolor-qdcm.so
 vendor/lib64/libtinyxml2_1.so
@@ -811,8 +797,6 @@ vendor/lib64/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so
 vendor/lib64/libdisplayfeature.so
 vendor/lib64/libdisplayfeatureservice.so
 vendor/lib64/libmi-stc-HW-modulate.so
-vendor/lib64/libtinyxml.so
-vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
 
 # Display postprocessing
 vendor/bin/hw/vendor.display.color@1.0-service
@@ -895,7 +879,6 @@ vendor/lib64/hw/fingerprint.goodix_fod.so:vendor/lib64/hw/fingerprint.goodix_fod
 vendor/lib64/libgf_hal.so
 vendor/lib64/com.fingerprints.extension@3.0.so
 vendor/lib64/vendor.xiaomi.hardware.dtool@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.fingerprintextension@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 
 # Fingerprint ( firmware )
@@ -1127,7 +1110,6 @@ vendor/etc/media_profiles_lahaina.xml
 vendor/etc/media_profiles_vendor.xml
 vendor/etc/media_profiles_yupik_v1.xml
 vendor/etc/video_system_specs.json
-vendor/lib/libavservices_minijail_vendor.so
 vendor/lib/libmmosal.so
 vendor/lib/libqc2vppfilter.so
 vendor/lib/libqcodec2_base.so
@@ -1140,7 +1122,7 @@ vendor/lib/libqcodec2_v4l2codec.so
 vendor/lib64/libmmosal.so
 
 # Media (Dolby Vision) - from lisa MIUI V13.0.8.0.SKOMIXM
-vendor/bin/hw/dolbycodec2|cfef1c14f3cb696580229240590164c846bf14aa
+vendor/bin/hw/dolbycodec2|c60325b50eb5e520fea3f61d2bdeae9dc5d2d92a
 vendor/etc/init/dolbycodec2.rc|1ea8b363e94fd4f5410cadceb30de8229fb38045
 vendor/etc/dolby_vision.cfg|16447ca0a10b37869737cc15b495e8a3f6763bfa
 vendor/etc/media_codecs_with_dolby_yupik.xml|bbd24a7967257dadc6a4e0a72271fb3053940f1f
@@ -1155,6 +1137,10 @@ vendor/lib/c2.dolby.hevc.sec.dec.so|664f12c499bc236628b92d1179e0290b0b5b1bf7
 vendor/lib/c2.dolby.store.so|08d26054d08062a508e53ad2751baa8590a6d3cf
 vendor/lib/libdolbyottcameracontrol.so|3758b2541004c5d9a2935ed134afbabb66d6a315
 vendor/lib/libdovi.so|185d52f232cfd2ec7156ee5103593ac12f04cb1f
+
+# Protobuf
+vendor/lib64/libprotobuf-cpp-full-3.9.1.so
+vendor/lib64/libprotobuf-cpp-lite-3.9.1.so
 
 # Media (VPU firmware)
 vendor/firmware/vpu20_1v.b00
@@ -1258,12 +1244,6 @@ vendor/bin/power_off_alarm
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
-
-# Protobuf
-vendor/lib/libprotobuf-cpp-full-3.9.1.so
-vendor/lib/libprotobuf-cpp-lite-3.9.1.so
-vendor/lib64/libprotobuf-cpp-full-3.9.1.so
-vendor/lib64/libprotobuf-cpp-lite-3.9.1.so
 
 # Public libraries
 vendor/etc/public.libraries.txt
@@ -1778,6 +1758,7 @@ vendor/firmware/aw8624l_osc_rtp_24K_5s.bin
 vendor/firmware/aw8624l_rtp.bin
 vendor/firmware/aw8624l_rtp_lighthouse.bin
 vendor/firmware/aw8624l_rtp_silk.bin
+vendor/firmware/FaceID_Wrong2_RTP.bin
 
 # VPP
 vendor/bin/hw/qconfigservice
