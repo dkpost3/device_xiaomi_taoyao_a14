@@ -23,6 +23,9 @@ persist.vendor.security.spuari.              u:object_r:vendor_security_spuari_p
 # Thermal
 vendor.sys.thermal.                u:object_r:vendor_thermal_normal_prop:s0
 
+# Fastcharge HAL
+persist.vendor.sec.fastchg_enabled              u:object_r:vendor_fastcharge_prop:s0
+
 # Displayfeature
 ro.vendor.display.dither                              u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.mi_calib.enable                     u:object_r:vendor_displayfeature_prop:s0

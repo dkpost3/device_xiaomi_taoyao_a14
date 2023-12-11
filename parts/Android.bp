@@ -3,14 +3,15 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 //
+
 android_app {
     name: "XiaomiParts",
 
     srcs: ["src/**/*.java"],
-    resource_dirs: ["res"],
+
     certificate: "platform",
     platform_apis: true,
-    system_ext_specific: true,    
+    system_ext_specific: true,
     privileged: true,
 
     static_libs: [
@@ -20,4 +21,5 @@ android_app {
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
+
 }

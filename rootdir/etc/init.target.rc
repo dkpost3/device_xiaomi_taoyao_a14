@@ -50,7 +50,7 @@ on init
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     chown system system /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
     chmod 0660 /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
-    
+
     # add a cpuset for the audio
     mkdir /dev/cpuset/audio-app
     chown system system /dev/cpuset/audio-app
@@ -171,12 +171,12 @@ on post-fs-data
     chmod 0664 /sys/class/leds/led:switch_2/trigger
     chmod 0664 /sys/class/leds/led:switch_3/trigger
     chmod 0664 /sys/class/leds/flashlight/brightness
-    
+
     mkdir /mnt/vendor/dsp 0770 root root
     copy /vendor/dsp/cdsp/fastrpc_shell_3 /mnt/vendor/dsp/fastrpc_shell_3
     chmod 0644 /mnt/vendor/dsp/fastrpc_shell_3
     mount none /mnt/vendor/dsp/fastrpc_shell_3 /vendor/dsp/cdsp/fastrpc_shell_3 bind
-    
+
     chmod 0666 /dev/migt
     restorecon /dev/migt
     chmod 0777 /sys/module/migt/parameters/migt_freq
@@ -233,6 +233,20 @@ on boot
     # Set xiaomi touch permissions
     chown system system /dev/xiaomi-touch
     chmod 0660 /dev/xiaomi-touch
+
+    # Set doze mode permissions
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/doze_mode
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/doze_status
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/doze_mode
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/doze_status
+
+    # Set anti-flicker mode permissions
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure
+
+    # Set high brightness mode permissions
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm_enabled
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm_enabled
 
     # Freezer setup
     write /dev/freezer/frozen/freezer.killable 1
@@ -317,11 +331,11 @@ on boot
     chmod 0666 /dev/stmvl53l5
     chown system system /dev/stmvl53l5
     write /sys/block/sda/queue/wbt_lat_usec 75000
-    
+
     #chown/chmod input_suspend node as needed from mishow service
     chown system system /sys/class/qcom-battery/input_suspend
     chmod 774 /sys/class/qcom-battery/input_suspend
-    
+
     #ufscld functions permission
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/auto_hibern8_enable
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/block_suspend
@@ -342,7 +356,7 @@ on property:vendor.display.lcd_density=560
 
 on property:vendor.display.lcd_density=640
    setprop dalvik.vm.heapgrowthlimit 256m
-   
+
 on boot && property:persist.vendor.usb.controller.default=*
     setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
 
@@ -438,7 +452,7 @@ service displayfeature /vendor/bin/displayfeature
     class late_start
     user root
     group root
-    
+
 on property:init.svc.surfaceflinger=stopped
     stop displayfeature
 

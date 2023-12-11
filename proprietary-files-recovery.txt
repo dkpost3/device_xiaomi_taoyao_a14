@@ -1,4 +1,4 @@
-# Unpinned blobs from taoyao-user 13 RKQ1.211001.001 V14.0.6.0.TLIMIXM release-keys
+# Unpinned blobs from taoyao-user 13 RKQ1.211001.001 V14.0.7.0.TLIMIXM release-keys
 
 # Touchscreen firmware
 vendor/firmware/focaltech_ts_fw.bin:recovery/root/vendor/firmware/focaltech_ts_fw.bin

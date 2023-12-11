@@ -1,10 +1,6 @@
 # Bluetooth
 vendor.bluetooth.soc=hastings
 
-# Camera
-ro.miui.notch=1
-ro.product.mod_device=taoyao_global
-
 # Charger
 ro.charger.enable_suspend=true
 

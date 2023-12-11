@@ -102,7 +102,7 @@ public class ClearSpeakerFragment extends PreferenceFragment implements
             } finally {
                 mMediaPlayer.reset();
                 mMediaPlayer.release();
-                mMediaPlayer = null;
+                mMediaPlayer=null;
             }
         }
         mClearSpeakerPref.setEnabled(true);
